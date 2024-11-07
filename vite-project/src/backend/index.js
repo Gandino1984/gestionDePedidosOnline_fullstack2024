@@ -1,6 +1,9 @@
 import express from 'express'; 
+import dotenv from 'dotenv';
 
-const APP_PORT = 3001;
+dotenv.config();
+
+const APP_PORT = process.env.APP_PORT;
 
 const app = express();
 
