@@ -1,16 +1,14 @@
 import express from 'express'; 
 import dotenv from 'dotenv';
 
-dotenv.config();
+import router from './routes/router.js';
 
-const APP_PORT = process.env.APP_PORT;
+dotenv.config();
 
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("GET request to main project route")  
-})
+app.use("/", router);
 
-app.listen(APP_PORT, () => {
-  console.log(`SERVER RUNNING ON PORT = ${APP_PORT}`)
+app.listen(process.env.APP_PORT, () => {
+  console.log(`SERVER RUNNING ON PORT = ${process.env.APP_PORT}`)
 })
