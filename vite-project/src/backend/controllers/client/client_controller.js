@@ -23,7 +23,7 @@ async function create(clientData) {
     const {id_client, name_client, pass_client, location_client } = clientData;
     const maxId = Math.max(...clients.map(client => client.id_client));
     const newClient = {id_client: maxId + 1, name_client, pass_client, location_client};
-    console.log("Action: Create client. Function create() called from: client_controller.js. New ClientData = " + id_client + " , " + name_client + " , " + pass_client + " , " + location_client);
+    console.log("Action: Create client. Function create() called from: client_controller.js");
     return {data: newClient};
 }   
 
@@ -42,7 +42,7 @@ async function update(id, clientData) {
     if(client.location_client){
         client.location_client = location_client;    
     }
-    console.log("Action: Update client. Function update() called from: client_controller.js. New ClientData = " + id_client + " , " + name_client + " , " + pass_client + " , " + location_client);
+    console.log("Action: Update client. Function update() called from: client_controller.js");
     return {data: client};
 }
 
