@@ -6,8 +6,9 @@ const router = Router();
 
 router.get("/", clientApiController.getAll);
 router.get("/create", clientApiController.create);
-router.get("/:id", clientApiController.getById);
-
 // router.post("/", clientApiController.create);
+router.get("/:id", clientApiController.getById);
+// router.put("/", clientApiController.update);
+router.get("/:id/update", clientApiController.update);
 
 export default router;

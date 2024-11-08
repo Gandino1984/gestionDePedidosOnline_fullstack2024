@@ -35,13 +35,16 @@ async function update(id, clientData) {
     if(!client){
         return {error: "Client could not be modified"};
     }
-    if(client.name_client){
+    if(id_client){
+        client.id_client = Number(id_client);   
+    }
+    if(name_client){
         client.name_client = name_client;    
     }
-    if(client.pass_client){
+    if(pass_client){
         client.pass_client = pass_client;    
     }
-    if(client.location_client){
+    if(location_client){
         client.location_client = location_client;    
     }
     return {data: client};

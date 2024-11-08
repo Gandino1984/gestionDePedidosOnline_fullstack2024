@@ -20,14 +20,26 @@ async function create(req, res) {
     res.json({error, data});
 }
 
+async function update(req, res) {
+     //post method
+    // const {id_client, name_client, pass_client, location_client } = req.body;
+    //get method
+    const id = req.params.id;
+    const {id_client, name_client, pass_client, location_client } = req.query;
+    const {error, data} = await clientController.update(id, {id_client, name_client, pass_client, location_client});
+    res.json({error, data});
+}
+
 export {
     getAll,
     getById,
-    create
+    create,
+    update
 }
 
 export default {
     getAll,
     getById,
-    create
+    create,
+    update
 }
