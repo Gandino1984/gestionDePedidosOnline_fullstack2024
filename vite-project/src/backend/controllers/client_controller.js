@@ -7,6 +7,7 @@ async function getAById(id) {
 }
 
 async function create(clientData) {
+    const {id_client, name_client, pass_client, location_client } = clientData;
     return `Create client: Data = ${id_client} , ${name_client} , ${pass_client} , ${location_client}`
 }   
 
