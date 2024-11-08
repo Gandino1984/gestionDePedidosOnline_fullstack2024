@@ -1,9 +1,11 @@
 async function getAll() {
-    return "Get all clients"
+    console.log("Action: Get all clients. Function getAll() called from: client_router.js");
+    return"Action: Get all clients. Function getAll() called from: client_router.js";
 }
 
-async function getAById(id) {
-    return `Get all clients by id. Id = ${id}`;
+async function getById(id) {
+    console.log("Action: Get clients by id. Function getById() called from: client_router.js");
+    return `Action: Get clients by id. Function getById() called from: client_router.js. Id = ${id}`;
 }
 
 async function create(clientData) {
@@ -20,5 +22,5 @@ async function removeById(id) {
     return `Delete client by id. Id = ${id}`
 }
 
-export { getAll, getAById, create, update, removeById }
+export { getAll, getById, create, update, removeById }
 
