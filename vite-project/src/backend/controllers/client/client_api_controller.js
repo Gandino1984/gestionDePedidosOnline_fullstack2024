@@ -30,16 +30,26 @@ async function update(req, res) {
     res.json({error, data});
 }
 
+async function removeById(req, res) {
+    const id = req.params.id;
+    const {error, data} = await clientController.removeById(id);
+    res.json({error, data});
+}
+
+
+
 export {
     getAll,
     getById,
     create,
-    update
+    update,
+    removeById
 }
 
 export default {
     getAll,
     getById,
     create,
-    update
+    update,
+    removeById
 }

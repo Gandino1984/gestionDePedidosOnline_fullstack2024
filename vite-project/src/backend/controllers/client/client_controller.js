@@ -1,4 +1,4 @@
-//datos de cliente falseados hasta tener modelo
+//datos de cliente falseados hasta tener el modelo
 const clients = [
     {id_client: 1, name_client: "client1", pass_client: "pass1", location_client: "location1"},
     {id_client: 2, name_client: "client2", pass_client: "pass2", location_client: "location2"},
