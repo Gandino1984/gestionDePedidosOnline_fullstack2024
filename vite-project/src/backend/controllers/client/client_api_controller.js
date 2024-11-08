@@ -11,13 +11,23 @@ async function getById(req, res) {
     res.json({error, data});
 }
 
+async function create(req, res) {
+    //post method
+    // const {id_client, name_client, pass_client, location_client } = req.body;
+    //get method
+    const { name_client, pass_client, location_client } = req.query;
+    const {error, data} = await clientController.create({name_client, pass_client, location_client});
+    res.json({error, data});
+}
 
 export {
     getAll,
-    getById
+    getById,
+    create
 }
 
 export default {
     getAll,
-    getById
+    getById,
+    create
 }

@@ -6,7 +6,6 @@ const clients = [
 ]
 
 async function getAll() {
-    console.log("Action: Get all clients. Function getAll() called from: client_controller.js");
     return {data:clients};
 }
 
@@ -15,15 +14,18 @@ async function getById(id) {
     if(!client){
         return {error: "Client not found"};
     }
-    console.log("Action: Get clients by id. Function getById() called from: client_controller.js");
     return {data: client};
 }
 
 async function create(clientData) {
-    const {id_client, name_client, pass_client, location_client } = clientData;
+    const {name_client, pass_client, location_client } = clientData;
+    //get method =  http://localhost:3007/client/create?name_client=toto&pass_client=passtoto&location_client=location toto
+    if(!name_client || !pass_client || !location_client){
+        return {error: "Client could not be created"};  
+    }
     const maxId = Math.max(...clients.map(client => client.id_client));
     const newClient = {id_client: maxId + 1, name_client, pass_client, location_client};
-    console.log("Action: Create client. Function create() called from: client_controller.js");
+    clients.push(newClient);
     return {data: newClient};
 }   
 
@@ -42,7 +44,6 @@ async function update(id, clientData) {
     if(client.location_client){
         client.location_client = location_client;    
     }
-    console.log("Action: Update client. Function update() called from: client_controller.js");
     return {data: client};
 }
 
@@ -52,7 +53,6 @@ async function removeById(id) {
         return {error: "Client could not be deleted"};
     }
     const deletedClient = clients.splice(clientIndex, 1);
-    console.log("Action: Remove client. Function removeById() called from: client_controller.js. Client removed = " + id);
     return {data: deletedClient};
 }
 
