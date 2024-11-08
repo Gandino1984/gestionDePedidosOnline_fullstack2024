@@ -58,3 +58,4 @@ async function removeById(id) {
 
 export { getAll, getById, create, update, removeById }
 
+export default{ getAll, getById, create, update, removeById }
