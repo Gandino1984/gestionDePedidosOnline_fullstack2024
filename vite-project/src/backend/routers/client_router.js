@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import { create, getAll, getById, removeById, update } from "../controllers/client_controller.js";
+import { create, getAll, getById, removeById, update } from "../controllers/client/client_controller.js";
 
 const router = Router();
 
