@@ -6,4 +6,6 @@ const router = Router();
 
 router.use("/client", clientApiRouter);
 
+router.use("/shop", clientApiRouter);
+
 export default router;

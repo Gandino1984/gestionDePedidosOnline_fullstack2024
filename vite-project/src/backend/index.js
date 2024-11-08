@@ -1,7 +1,7 @@
 import express from 'express'; 
 import dotenv from 'dotenv';
 
-import router from './routers/main_router.js';
+import router from './routers/router.js';
 
 dotenv.config();
 
